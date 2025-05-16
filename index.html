@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />																																																																
+    <title>Black Tiger Gaming Zone</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #FFD700;
+            --text-color: #ffffff;
+            --secondary-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--bg-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo img {
+            height: 30px; /* Smallerlogo for phones */
+        } 
+        .logo a{
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px; /* Smaller gap for phones */
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem; /* Smaller font size for phones */
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 40vh; /* Smaller slideshow height for phones */
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 40vh; /* Smaller slideshow height for phones */
+            object-fit: cover;
+            filter: blur(3px); /* Slightly less blur for phones */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent-color);
+            text-align: center;
+            z-index: 2;
+            padding: 0 15px; /* Adjust padding for smaller screens */
+        }
+
+        .overlay-text h1 {
+            font-size: 1.5rem; /* Smaller heading for phones */
+            margin-bottom: 8px;
+        }
+
+        .overlay-text p {
+            font-size: 0.9rem; /* Smaller paragraph for phones */
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .book-now-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 8px 15px; /* Smaller button padding for phones */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem; /* Smaller button font for phones */
+            transition: background-color 0.3s ease;
+        }
+
+        .book-now-button:hover {
+            background-color: #e0b800;
+        }
+
+        .section-separator {
+            width: 90%; /* Wider separator for phones */
+            height: 1px; /* Thinner separator for phones */
+            background-color: var(--accent-color);
+            margin: 20px auto; /* Adjust margins for phones */
+        }
+
+        .section-heading {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 1.2rem; /* Smaller heading for phones */
+            margin-bottom: 15px; /* Adjust margins for phones */
+            font-weight: bold;
+        }
+
+        /* Auto Scrolling Image Container */
+        .auto-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 15px 0; /* Adjust margins for phones */
+            background-color: var(--secondary-bg); /* Optional background */
+            padding: 5px 0; /* Optional padding */
+            position: relative; /* For positioning text overlays */
+        }
+
+        .auto-scroll-track {
+            display: flex;
+            animation: scroll 25s linear infinite; /* Adjust animation duration for smoother scrolling on phones */
+        }
+
+        .auto-scroll-item {
+            width: calc(100% / 3 - 10px); /* Adjust width and spacing for phones */
+            margin: 0 5px;
+            flex-shrink: 0; /* Prevent items from shrinking */
+            box-sizing: border-box;
+            height: 100px; /* Smaller fixed height for phones */
+            position: relative; /* For positioning text within each item */
+            overflow: hidden; /* Clip any overflowing text */
+        }
+
+        .auto-scroll-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            filter: blur(3px); /* Slightly less blur for phones */
+        }
+
+        .image-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent-color);
+            font-size: 0.9rem; /* Smaller text for phones */
+            font-weight: bold;
+            text-align: center;
+            z-index: 10; /* Ensure text is above the image */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); } /* Scroll full width */
+        }
+
+        /* Adjust animation speed for different number of images */
+        .auto-scroll-track.five-images {
+            animation-duration: calc(25s * 5 / 3); /* Adjust for 5 images showing 3 at a time */
+        }
+        .auto-scroll-track.seven-images {
+            animation-duration: calc(25s * 7 / 3); /* Adjust for 7 images showing 3 at a time */
+        }
+
+        footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            padding: 10px 15px; /* Smaller padding for phones */
+            text-align: center;
+            margin-top: auto;
+            border-top: 1px solid var(--accent-color); /* Thinner border for phones */
+            font-size: 0.7rem; /* Smaller font size for phones */
+        }
+
+        footer p {
+            margin-bottom: 3px; /* Smaller margin for phones */
+        }
+
+        /* Media query for larger screens (tablets and desktops) */
+        @media (min-width: 768px) {
+            header {
+                padding: 20px 40px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .slideshow-container {
+                height: 70vh;
+            }
+
+            .slide {
+                height: 70vh;
+            }
+
+            .overlay-text h1 {
+                font-size: 3rem;
+            }
+
+            .overlay-text p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+            .book-now-button {
+                font-size: 1.2rem;
+                padding: 12px 25px;
+            }
+
+            .section-separator {
+                width: 80%;
+                height: 2px;
+                margin: 30px auto;
+            }
+
+            .section-heading {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            /* Auto Scrolling Image Container */
+            .auto-scroll-container {
+                margin: 20px 0;
+                padding: 10px 0;
+            }
+
+            .auto-scroll-track {
+                animation-duration: 15s;
+            }
+
+            .auto-scroll-item {
+                width: calc(33.333% - 20px);
+                margin: 0 10px;
+                height: 150px;
+            }
+
+            .auto-scroll-item img {
+                filter: blur(5px);
+            }
+
+            .image-text-overlay {
+                font-size: 1.2rem;
+            }
+
+            footer {
+                padding: 15px 20px;
+                border-top: 2px solid var(--accent-color);
+                font-size: 0.9rem;
+            }
+
+            footer p {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+              <img src="IMG/logo.png" alt="Black Tiger Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="BTGW/about.html">About</a></li>
+                <li><a href="BTGW/services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="overlay-text">
+            <h1>Welcome to Black Tiger</h1>
+            <p>Elite gaming experience in every click</p>
+            <a href="book.html" class="book-now-button">Book Now</a>
+        </div>
+        <img class="slide active" src="IMG/slideshow/1.png" alt="Slide 1">
+        <img class="slide" src="IMG/slideshow/2.png" alt="Slide 2">
+        <img class="slide" src="IMG/slideshow/3.png" alt="Slide 3">
+    </div>
+
+    <div class="section-separator"></div>
+    <h2 class="section-heading">WE OFFER</h2>
+
+    <div class="auto-scroll-container">
+        <div class="auto-scroll-track five-images">
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/1.png" alt="Image 1">
+                <div class="image-text-overlay">PS5</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/2.png" alt="Image 2">
+                <div class="image-text-overlay">RACING SIM</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/3.png" alt="Image 3">
+                <div class="image-text-overlay">VR SIM</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/4.png" alt="Image 4">
+                <div class="image-text-overlay">POOL</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/5.png" alt="Image 5">
+                <div class="image-text-overlay">ARCADE</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/1.png" alt="Image 1">
+                <div class="image-text-overlay">PS5</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/2.png" alt="Image 2">
+                <div class="image-text-overlay">RACING SIM</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/3.png" alt="Image 3">
+                <div class="image-text-overlay">VR SIM</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/4.png" alt="Image 4">
+                <div class="image-text-overlay">POOL</div>
+            </div>
+            <div class="auto-scroll-item">
+                <img src="IMG/img2/5.png" alt="Image 5">
+                <div class="image-text-overlay">ARCADE</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Black Tiger Gaming Zone. All rights reserved.</p>
+        <p>Contact us at: 09972942457</p>
+        <p>Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+
+        setInterval(showSlides, 3000);
+    </script>
+</body>
+</html>
