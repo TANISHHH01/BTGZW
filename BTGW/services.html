@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - Black Tiger Gaming Zone</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #FFD700;
+            --text-color: #ffffff;
+            --secondary-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--bg-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .service-container {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(4px);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent-color);
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background for better readability */
+            border-radius: 8px;
+        }
+
+        .service-overlay h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-overlay p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .snacks-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+        }
+
+        .snacks-section h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .snacks-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        .snacks-list li {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            padding: 15px 20px;
+            text-align: center;
+            border-top: 2px solid var(--accent-color);
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            header {
+                padding: 20px 40px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .service-overlay h2 {
+                font-size: 2.5rem;
+            }
+
+            .service-overlay p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMG/logo.png" alt="Black Tiger Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../BTGW/about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../BTGW/book.html">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="service-container">
+            <img class="service-image" src="../IMG/img2/1.png" alt="PS5 Gaming">
+            <div class="service-overlay">
+                <h2>PS5 Gaming</h2>
+                <p>Experience the latest generation of gaming with our powerful PlayStation 5 consoles.</p>
+            </div>
+        </div>
+
+        <div class="service-container">
+            <img class="service-image" src="../IMG/img2/2.png" alt="Racing Simulator">
+            <div class="service-overlay">
+                <h2>Racing Simulator</h2>
+                <p>Get behind the wheel and feel the thrill of realistic racing with our advanced simulators.</p>
+            </div>
+        </div>
+
+        <div class="service-container">
+            <img class="service-image" src="../IMG/img2/3.png" alt="VR Simulator">
+            <div class="service-overlay">
+                <h2>VR Simulator</h2>
+                <p>Immerse yourself in virtual worlds with our cutting-edge VR simulators for an unforgettable experience.</p>
+            </div>
+        </div>
+
+        <div class="service-container">
+            <img class="service-image" src="../IMG/img2/4.png" alt="Pool">
+            <div class="service-overlay">
+                <h2>Pool</h2>
+                <p>Enjoy a classic game of pool with friends in our comfortable and well-maintained area.</p>
+            </div>
+        </div>
+
+        <div class="service-container">
+            <img class="service-image" src="../IMG/img2/5.png" alt="Arcade Games">
+            <div class="service-overlay">
+                <h2>Arcade Games</h2>
+                <p>Relive the golden age of gaming with a wide selection of exciting arcade classics.</p>
+            </div>
+        </div>
+
+      </main>
+
+    <footer>
+        <p>&copy; 2025 Black Tiger Gaming Zone. All rights reserved.</p>
+        <p>Contact us at: [Your Phone Number]</p>
+        <p>Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
+    </footer>
+</body>
+</html>

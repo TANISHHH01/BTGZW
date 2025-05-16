@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - Black Tiger Gaming Zone</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #FFD700;
+            --text-color: #ffffff;
+            --secondary-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--bg-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo a{
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between; /* push price to the right */
+            border-bottom: 1px solid #333; /* Add a border */
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        ul li span {
+            font-weight: bold; /* make the price bold */
+        }
+
+        footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            padding: 15px 20px;
+            text-align: center;
+            border-top: 2px solid var(--accent-color);
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            header {
+                padding: 20px 40px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            ul li{
+                font-size: 1.2rem;
+            }
+
+            footer {
+                padding: 20px 40px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/logo.png" alt="Black Tiger Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Games</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../BTGW/book.html">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Pricing</h2>
+        <p>
+            Here are the prices for our gaming services.  Please note that prices for
+            some activities may vary or are provided at the location.
+        </p>
+
+        <h3>PC Gaming</h3>
+        <ul>
+            <li>Per Hour <span>₹80</span></li>
+            <li>Additional Time <span>₹80/hour</span></li>
+        </ul>
+
+        <h3>Console Gaming</h3>
+        <ul>
+            <li>PlayStation 5 - Per Hour <span>₹80</span></li>
+            <li>Xbox Series X - Per Hour <span>₹80</span></li>
+        </ul>
+
+        <h3>Racing Simulator</h3>
+        <ul>
+            <li>Per Half Hour <span>₹80</span></li>
+            <li>Per Hour <span>₹150</span></li>
+        </ul>
+
+        <h3>VR Gaming</h3>
+        <ul>
+             <li>Per Half Hour <span>₹100</span></li>
+            <li>Per Hour <span>₹180</span></li>
+        </ul>
+
+        <h3>Arcade Games</h3>
+        <ul>
+            <li>Per Play <span>₹20-50 (Varies)</span></li>
+        </ul>
+
+        <h3>Other Activities</h3>
+        <p>
+            Prices for other activities, including group packages, tournaments, and
+            special events, are available upon request at the location.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Black Tiger Gaming Zone. All rights reserved.</p>
+        <p>Contact us at: [Your Phone Number]</p>
+        <p>Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
+    </footer>
+</body>
+</html>
