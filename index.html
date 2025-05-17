@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />																																																																
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Black Tiger Gaming Zone</title>
     <style>
         :root {
@@ -38,26 +38,33 @@
         }
 
         .logo img {
-            height: 30px; /* Smallerlogo for phones */
-        } 
+            height: 30px;
+        }
         .logo a{
-          display: flex;
-          align-items: center;
-          text-decoration: none;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 10px; /* Smaller gap for phones */
+            gap: 10px;
             padding: 0;
+            overflow-x: auto; /* Enable horizontal scrolling for nav on small screens */
+            -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+            padding-bottom: 5px; /* Prevent scrollbar from covering last item */
+        }
+
+        nav li {
+            flex-shrink: 0; /* Prevent nav items from shrinking */
         }
 
         nav a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.8rem; /* Smaller font size for phones */
+            font-size: 0.8rem;
         }
 
         nav a:hover {
@@ -67,15 +74,15 @@
         .slideshow-container {
             position: relative;
             width: 100%;
-            height: 40vh; /* Smaller slideshow height for phones */
+            height: 40vh;
             overflow: hidden;
         }
 
         .slide {
             width: 100%;
-            height: 40vh; /* Smaller slideshow height for phones */
+            height: 40vh;
             object-fit: cover;
-            filter: blur(3px); /* Slightly less blur for phones */
+            filter: blur(3px);
             position: absolute;
             top: 0;
             left: 0;
@@ -95,82 +102,87 @@
             color: var(--accent-color);
             text-align: center;
             z-index: 2;
-            padding: 0 15px; /* Adjust padding for smaller screens */
+            padding: 0 15px;
         }
 
         .overlay-text h1 {
-            font-size: 1.5rem; /* Smaller heading for phones */
+            font-size: 1.5rem;
             margin-bottom: 8px;
         }
 
         .overlay-text p {
-            font-size: 0.9rem; /* Smaller paragraph for phones */
+            font-size: 0.9rem;
             color: #fff;
             margin-bottom: 15px;
         }
 
-        .book-now-button {
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .book-now-button, .visit-now-button {
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--bg-color);
-            padding: 8px 15px; /* Smaller button padding for phones */
+            padding: 8px 15px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 0.9rem; /* Smaller button font for phones */
+            font-size: 0.9rem;
             transition: background-color 0.3s ease;
         }
 
-        .book-now-button:hover {
+        .book-now-button:hover, .visit-now-button:hover {
             background-color: #e0b800;
         }
 
         .section-separator {
-            width: 90%; /* Wider separator for phones */
-            height: 1px; /* Thinner separator for phones */
+            width: 90%;
+            height: 1px;
             background-color: var(--accent-color);
-            margin: 20px auto; /* Adjust margins for phones */
+            margin: 20px auto;
         }
 
         .section-heading {
             text-align: center;
             color: var(--accent-color);
-            font-size: 1.2rem; /* Smaller heading for phones */
-            margin-bottom: 15px; /* Adjust margins for phones */
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             font-weight: bold;
         }
 
-        /* Auto Scrolling Image Container */
         .auto-scroll-container {
             width: 100%;
             overflow: hidden;
-            margin: 15px 0; /* Adjust margins for phones */
-            background-color: var(--secondary-bg); /* Optional background */
-            padding: 5px 0; /* Optional padding */
-            position: relative; /* For positioning text overlays */
+            margin: 15px 0;
+            background-color: var(--secondary-bg);
+            padding: 5px 0;
+            position: relative;
         }
 
         .auto-scroll-track {
             display: flex;
-            animation: scroll 25s linear infinite; /* Adjust animation duration for smoother scrolling on phones */
+            animation: scroll 25s linear infinite;
         }
 
         .auto-scroll-item {
-            width: calc(100% / 3 - 10px); /* Adjust width and spacing for phones */
+            width: calc(100% / 3 - 10px);
             margin: 0 5px;
-            flex-shrink: 0; /* Prevent items from shrinking */
+            flex-shrink: 0;
             box-sizing: border-box;
-            height: 100px; /* Smaller fixed height for phones */
-            position: relative; /* For positioning text within each item */
-            overflow: hidden; /* Clip any overflowing text */
+            height: 100px;
+            position: relative;
+            overflow: hidden;
         }
 
         .auto-scroll-item img {
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover; /* Maintain aspect ratio and cover the container */
-            filter: blur(3px); /* Slightly less blur for phones */
+            object-fit: cover;
+            filter: blur(3px);
         }
 
         .image-text-overlay {
@@ -179,41 +191,40 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--accent-color);
-            font-size: 0.9rem; /* Smaller text for phones */
+            font-size: 0.9rem;
             font-weight: bold;
             text-align: center;
-            z-index: 10; /* Ensure text is above the image */
-            white-space: nowrap; /* Prevent text from wrapping */
+            z-index: 10;
+            white-space: nowrap;
         }
 
         @keyframes scroll {
             0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); } /* Scroll full width */
+            100% { transform: translateX(-100%); }
         }
 
-        /* Adjust animation speed for different number of images */
         .auto-scroll-track.five-images {
-            animation-duration: calc(25s * 5 / 3); /* Adjust for 5 images showing 3 at a time */
+            animation-duration: calc(25s * 5 / 3);
         }
         .auto-scroll-track.seven-images {
-            animation-duration: calc(25s * 7 / 3); /* Adjust for 7 images showing 3 at a time */
+            animation-duration: calc(25s * 7 / 3);
         }
 
         footer {
             background-color: var(--secondary-bg);
             color: var(--text-color);
-            padding: 10px 15px; /* Smaller padding for phones */
+            padding: 10px 15px;
             text-align: center;
             margin-top: auto;
-            border-top: 1px solid var(--accent-color); /* Thinner border for phones */
-            font-size: 0.7rem; /* Smaller font size for phones */
+            border-top: 1px solid var(--accent-color);
+            font-size: 0.7rem;
         }
 
         footer p {
-            margin-bottom: 3px; /* Smaller margin for phones */
+            margin-bottom: 3px;
         }
 
-        /* Media query for larger screens (tablets and desktops) */
+        /* Media queries for larger screens */
         @media (min-width: 768px) {
             header {
                 padding: 20px 40px;
@@ -225,6 +236,8 @@
 
             nav ul {
                 gap: 20px;
+                overflow-x: initial; /* Remove horizontal scroll on larger screens */
+                padding-bottom: 0;
             }
 
             nav a {
@@ -248,7 +261,11 @@
                 margin-bottom: 30px;
             }
 
-            .book-now-button {
+            .button-container {
+                gap: 20px;
+            }
+
+            .book-now-button, .visit-now-button {
                 font-size: 1.2rem;
                 padding: 12px 25px;
             }
@@ -264,7 +281,6 @@
                 margin-bottom: 20px;
             }
 
-            /* Auto Scrolling Image Container */
             .auto-scroll-container {
                 margin: 20px 0;
                 padding: 10px 0;
@@ -298,13 +314,29 @@
                 margin-bottom: 5px;
             }
         }
+
+        /* Extra small screen adjustments */
+        @media (max-width: 400px) {
+            .overlay-text h1 {
+                font-size: 1.3rem;
+            }
+
+            .overlay-text p {
+                font-size: 0.8rem;
+            }
+
+            .book-now-button, .visit-now-button {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-              <img src="IMG/logo.png" alt="Black Tiger Logo">
+                <img src="IMG/logo.png" alt="Black Tiger Logo">
             </a>
         </div>
         <nav>
@@ -322,7 +354,10 @@
         <div class="overlay-text">
             <h1>Welcome to Black Tiger</h1>
             <p>Elite gaming experience in every click</p>
-            <a href="book.html" class="book-now-button">Book Now</a>
+            <div class="button-container">
+                <a href="book.html" class="book-now-button">Book Now</a>
+                <a href="https://maps.app.goo.gl/1VH7LWGciLsVXHZj7" class="visit-now-button">Visit Now</a>
+            </div>
         </div>
         <img class="slide active" src="IMG/slideshow/1.png" alt="Slide 1">
         <img class="slide" src="IMG/slideshow/2.png" alt="Slide 2">
@@ -378,7 +413,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Black Tiger Gaming Zone. All rights reserved.</p>
+        <p>© 2025 Black Tiger Gaming Zone. All rights reserved.</p>
         <p>Contact us at: 09972942457</p>
         <p>Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
     </footer>
