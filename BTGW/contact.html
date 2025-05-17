@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Black Tiger Gaming Zone</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #FFD700;
+            --text-color: #ffffff;
+            --secondary-bg: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--bg-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-container h1 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            padding: 10px 15px;
+            text-align: center;
+            border-top: 1px solid var(--accent-color);
+            font-size: 0.7rem;
+        }
+
+        footer p {
+            margin-bottom: 3px;
+        }
+
+        @media (min-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .contact-container h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info p {
+                font-size: 1.1rem;
+            }
+
+            footer {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+            }
+
+            footer p {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/logo.png" alt="Black Tiger Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:09972942457">09972942457</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/blacktiger_gamingzone/" target="_blank">blacktiger_gamingzone</a></p>
+                <p><strong>Justdial:</strong> <a href="https://www.justdial.com/Manipal/Black-Tiger-Gaming-Zone-Syndicate-Circle-Ananth-Nagar-1st-Stage/0820PX820-X820-240419003528-M5T2_BZDET" target="_blank">View on Justdial</a></p>
+                <p><strong>Address:</strong> Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Black Tiger Gaming Zone. All rights reserved.</p>
+        <p>Contact us at: 09972942457</p>
+        <p>Sonia Clinic Road, Ananth Nagar 1st Stage, Manipal - 576104 (Syndicate Circle)</p>
+    </footer>
+</body>
+</html>
